@@ -73,7 +73,8 @@ programa
 			escreva("Obrigado por utilizar nosso sistema !")
 		}
 		//Tratamento de números invalidos
-		senao{
+		se(escolhaUsuario < 0 ou escolhaUsuario > 5)
+		{
 			escreva("O valor informado é invalido," 
 			+ "\npor favor tente novamente usando valores de ' 1 à 5 ' confome as opções.")
 		}
@@ -84,7 +85,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1758; 
+ * @POSICAO-CURSOR = 1855; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
