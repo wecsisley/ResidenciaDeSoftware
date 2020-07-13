@@ -3,19 +3,21 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro numero1
-		inteiro numero2
-		leia(numero1)
-		leia(numero2)
-		
-		escreveNvezes(numero1, numero2)
-	}
-	funcao escreveNvezes(inteiro numeros, inteiro quantidade){
+		inteiro altura, espaco
+		leia(altura)
+		espaco = altura
 
-		se(numeros <= quantidade){
-			escreva(numeros + " ")
-
-			escreveNvezes(numeros +1, quantidade)
+		para(inteiro linha = 1; linha<= altura; linha++){
+				escreva("\n")
+				
+			para(inteiro k = espaco; k>=0; k--){
+				escreva(" ")
+			}
+			
+			para(inteiro coluna = 1; coluna <=linha ; coluna++){
+				escreva("* ")
+			}
+			espaco--
 		}
 	}
 }
@@ -24,7 +26,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 123; 
+ * @POSICAO-CURSOR = 323; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

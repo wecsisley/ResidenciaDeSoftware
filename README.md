@@ -6,4 +6,4 @@ legenda da nomeação dos códigos:
 
 L1E1_Exemplo = Lista de exercícios 1, Exercício 1 _ Nome do código
 
-IDE usada: Portugol Estúdio
+IDE usada (módolo 1): Portugol Estúdio 
