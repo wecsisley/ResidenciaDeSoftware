@@ -2,24 +2,21 @@ programa
 {
 	
 	funcao inicio()
-	{
-		inteiro numero, aux, resto, 
-		inteiro palindromo = 0
-		leia(numero)
+	{	
+		real vet[3] 
+		real soma = 0.0
+		real valores
+		real media
 
-		para(aux=numero; numero!=0; numero=numero/10){
+		para(inteiro posicao =0; posicao < 3; posicao++){
 
-			resto = numero % 10
-			palindromo = (palindromo + resto)*10
+			leia(valores)
+			vet[posicao] = valores
+			soma = soma + vet[posicao]
 		}
 
-		palindromo = palindromo/10
-		se(aux == palindromo){
-			escreva(aux + " é um palíndromo")
-		}
-		senao {
-			escreva(aux + " não é um palíndromo")
-		}
+		media = soma /3
+		escreva("\nA média dos valores do vetor é: " + media)
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -27,7 +24,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 307; 
+ * @POSICAO-CURSOR = 258; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

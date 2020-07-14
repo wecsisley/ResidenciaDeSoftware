@@ -1,24 +1,20 @@
 programa
 {
+	inclua biblioteca Util --> util
 	
 	funcao inicio()
 	{
-		inteiro numero, aux, resto, 
-		inteiro palindromo = 0
-		leia(numero)
+		inteiro meuVetor[10]
+		inteiro numero
 
-		para(aux=numero; numero!=0; numero=numero/10){
+		para(inteiro posicao =0; posicao < 10; posicao++){
 
-			resto = numero % 10
-			palindromo = (palindromo + resto)*10
+			leia(numero)
+			meuVetor[posicao] = numero
 		}
+		para(inteiro posicao = 9; posicao >=0; posicao--){
 
-		palindromo = palindromo/10
-		se(aux == palindromo){
-			escreva(aux + " é um palíndromo")
-		}
-		senao {
-			escreva(aux + " não é um palíndromo")
+			escreva(meuVetor[posicao])
 		}
 	}
 }
@@ -27,7 +23,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 307; 
+ * @POSICAO-CURSOR = 206; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
