@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\wecsi\OneDrive\Área de Trabalho\Wecsisley\Residencia de Software\GitHub\ResidenciaDeSoftware\Java(1)\.metadata\.plugins\org.eclipse.jdt.core
+1103931493.index
+2196199803.index

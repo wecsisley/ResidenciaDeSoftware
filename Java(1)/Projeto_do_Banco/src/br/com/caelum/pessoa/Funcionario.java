@@ -1,9 +1,7 @@
 package br.com.caelum.pessoa;
 
-public abstract class Funcionario {
+public abstract class Funcionario extends Cliente{
 
-	protected String nome;
-	protected String cpf;
 	protected double salario;
 
 	public void setSalario(double salario) {
@@ -22,11 +20,11 @@ public abstract class Funcionario {
 		this.nome = nome;
 	}
 
-	public String getCpf() {
+	public int getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(String cpf) {
+	public void setCpf(int cpf) {
 		this.cpf = cpf;
 	}
 

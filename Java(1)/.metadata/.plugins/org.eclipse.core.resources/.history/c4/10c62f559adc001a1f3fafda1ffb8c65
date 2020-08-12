@@ -1,0 +1,68 @@
+package br.com.bugados.usuario;
+
+public class Cliente {
+	
+	protected String nome;
+	protected int senha;
+	protected int cpf;
+	String linha;
+	Cliente cliente;
+	
+	public Cliente() {
+	}
+	
+	public Cliente (String nome, int senha, int cpf) {
+		this.nome = nome;
+		this.senha = senha;
+		this.cpf = cpf;
+	}
+	
+	public boolean login(String password, int login) {
+		int saidaPassword = Integer.parseInt(password);
+		
+		if (this.senha == saidaPassword && this.cpf == login) {
+			System.out.println("Acesso permitido !");
+			return true;
+		} else if (this.cpf != login) {
+			System.out.println("Usuário não encontrado");
+			return false;
+		} else if (this.senha != saidaPassword) {
+			System.out.println("Senha inválida");
+			return false;
+		} else {
+			System.out.println("Usuário não cadastrado");
+			return false;
+		}
+	}
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Cliente [nome=" + nome + ", senha=" + senha + ", cpf=" + cpf + ", linha=" + linha + ", cliente="
+				+ cliente + ", getNome()=" + getNome() + ", getSenha()=" + getSenha() + ", getCpf()=" + getCpf()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public int getSenha() {
+		return senha;
+	}
+	public void setSenha(int senha) {
+		this.senha = senha;
+	}
+	public int getCpf() {
+		return cpf;
+	}
+	public void setCpf(int cpf) {
+		this.cpf = cpf;
+	}
+	
+	
+}

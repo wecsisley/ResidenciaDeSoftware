@@ -1,0 +1,11 @@
+package br.com.bugados.util;
+
+import br.com.bugados.conta.Conta;
+
+public class RelatoriosBanco extends Conta {
+	
+	public void relatorioBanco() {
+		
+	}
+}
+

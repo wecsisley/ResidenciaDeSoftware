@@ -1,0 +1,57 @@
+package br.com.bugados.main;
+
+import java.io.*;
+import java.util.*;
+import br.com.bugados.conta.*;
+import br.com.bugados.usuario.Cliente;
+
+public class TestesLeitorCSV {
+
+	public static void main(String[] args) throws IOException {
+
+		String linha;
+		int cpf = 0;
+		String nome = "";
+
+		Conta novaConta = new Conta();
+
+		Cliente novoCliente = new Cliente();
+
+		BufferedReader csvReader = new BufferedReader(new FileReader("csvCliente.csv"));
+		linha = csvReader.readLine();
+
+		String[] data;
+
+		Map<Integer, Conta> mapConta = new HashMap<>();
+		Map<Integer, Cliente> mapCliente = new HashMap<>();
+
+		while ((linha = csvReader.readLine()) != null) {
+			linha = linha.replace("\"", "");
+
+			data = linha.split(";");
+
+			nome = data[0];
+			String tipo = data[3];
+			cpf = Integer.parseInt(data[1]);
+			int senha = Integer.parseInt(data[2]);
+			int numero = Integer.parseInt(data[4]);
+			int agencia = Integer.parseInt(data[5]);
+
+			novaConta.setTitular(data[0]);
+			novaConta.setNumero(numero);
+			novaConta.setAgencia(agencia);
+			novaConta.setTipo(tipo);
+
+			novoCliente.setNome(nome);
+			novoCliente.setCpf(cpf);
+			novoCliente.setSenha(senha);
+
+			mapConta.put(cpf, novaConta);
+			mapCliente.put(cpf, novoCliente);
+
+		}
+		Conta contaCliente = mapConta.get(222);
+		System.out.println(contaCliente.getTipo());
+		csvReader.close();
+	}
+}

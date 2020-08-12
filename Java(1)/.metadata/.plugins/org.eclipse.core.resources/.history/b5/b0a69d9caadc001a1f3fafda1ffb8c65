@@ -1,0 +1,18 @@
+package br.com.bugados.funcionario;
+
+import br.com.bugados.usuario.Cliente;
+
+public class Funcionario extends Cliente {
+	
+	protected String cargo;
+	
+	public Funcionario () {
+		
+	}
+	
+	public Funcionario(String nome, int cpf, int senha) {
+		this.nome = nome;
+		this.cpf = cpf;
+		this.senha = senha;
+	}
+}

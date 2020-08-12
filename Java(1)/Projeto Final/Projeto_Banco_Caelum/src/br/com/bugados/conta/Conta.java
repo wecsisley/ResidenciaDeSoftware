@@ -1,0 +1,123 @@
+package br.com.bugados.conta;
+
+import java.util.ArrayList;
+
+import br.com.bugados.util.RelatoriosBanco;
+
+public  class Conta implements RelatoriosBanco {
+
+	protected String titular;
+	protected int numero;
+	protected int agencia;
+	protected String tipo;
+	protected int cpfTitular;
+	protected double saldo;
+
+	public Conta() {
+		
+	}
+	
+	public Conta(String titular, int numero, int agencia, String tipo, int cpfTitular) {
+		this.titular = titular;
+		this.numero = numero;
+		this.agencia = agencia;
+		this.tipo = tipo;
+		this.cpfTitular = cpfTitular;
+	}
+	
+	@Override
+	public void relatorioBanco() {
+		ArrayList lista = new ArrayList();
+		lista.add(this.agencia);
+	}
+	
+	public void consultaTipo() {
+		
+	}
+	
+	public void deposita(double valor) {
+		this.saldo += valor;
+	}
+
+	public void saca(double valor) {
+		if (this.saldo < valor) {
+			System.out.println("Saldo insuficiente!!!");
+		} else {
+			this.saldo -= valor;
+		}
+	}
+
+	public void transferePara(Conta destino, double valor) {
+		if (this.saldo >= valor) {
+			destino.saldo = destino.saldo + valor;
+			this.saldo = this.saldo - valor;
+		} else {
+			System.out.println("Não há saldo suficiente para transferir esse valor!!!");
+		}
+	}
+
+	public void menuOpcoes(double valorSaca, double valorDeposito, Conta destino, double valorTransferido) {
+		this.saca(valorSaca);
+		this.deposita(valorDeposito);
+		this.transferePara(destino, valorTransferido);
+		this.consultaSaldo();
+	}
+
+	public void consultaSaldo() {
+		System.out.printf("R$ %.2f%n", this.saldo);
+	}
+
+	public void atualiza(double taxaSelic) {
+		this.saldo += this.saldo * taxaSelic;
+	}
+
+	public double getSaldo() {
+		return this.saldo;
+	}
+	
+	public int getCpfTitular() {
+		return cpfTitular;
+	}
+
+	public void setCpfTitular(int cpfTitular) {
+		this.cpfTitular = cpfTitular;
+	}
+
+	public int getAgencia() {
+		return agencia;
+	}
+
+	public void setAgencia(int agencia) {
+		this.agencia = agencia;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public String getTitular() {
+		return titular;
+	}
+
+	public void setTitular(String titular) {
+		this.titular = titular;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	@Override
+	public String toString() {
+		return "Conta [titular=" + titular + ", numero=" + numero + ", agencia=" + agencia + ", tipo=" + tipo
+				+ ", cpfTitular=" + cpfTitular + ", saldo=" + saldo + "]";
+	}
+
+}

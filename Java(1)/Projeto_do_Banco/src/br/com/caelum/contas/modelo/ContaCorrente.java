@@ -5,6 +5,7 @@ public class ContaCorrente extends Conta implements Tributavel {
 	protected final String tipo = "Conta Corrente";
 	protected double TarifaCorrente = TARIFAS + 0.10;
 	protected final double SEGURODEVIDA = 42;
+
 	
 	@Override
 	public String consultaTipo() {

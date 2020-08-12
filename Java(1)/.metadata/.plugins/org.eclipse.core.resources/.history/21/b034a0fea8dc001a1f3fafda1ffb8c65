@@ -1,0 +1,26 @@
+package br.com.bugados.main;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import br.com.bugados.conta.Conta;
+import br.com.bugados.usuario.Cliente;
+
+public class TestaLeitorCsvFuncionarioEConta {
+
+	public static void main(String[] args) throws IOException{
+		
+		String linha;
+		
+		BufferedReader csvReader = new BufferedReader(new FileReader("csvFuncionario.csv"));
+		linha = csvReader.readLine();
+		
+		Map<Integer, Conta> mapConta = new HashMap<>();
+		Map<Integer, Funcionario> mapFuncionario = new HashMap<>();
+		
+		csvReader.close();
+	}
+}

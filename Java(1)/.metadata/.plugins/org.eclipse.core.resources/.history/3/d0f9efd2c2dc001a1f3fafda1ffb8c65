@@ -1,0 +1,15 @@
+package br.com.bugados.main;
+
+public class WhileMaldito {
+	public static void main(String[] args) {
+		
+		int contador = 1;
+		
+		while (contador < 2) {
+			System.out.println("Entrou no While");
+			contador ++ ;
+		}
+		System.out.println("Saiu do While");
+	}
+
+}

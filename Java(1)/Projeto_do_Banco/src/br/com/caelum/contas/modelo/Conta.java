@@ -3,42 +3,17 @@ package br.com.caelum.contas.modelo;
 import javax.swing.JOptionPane;
 
 public abstract class Conta {
-
+	
 	protected int numero;
 	protected int agencia;
 	protected String titular;
+	protected String tipo;
 	protected String dataAbertura;
 	protected double saldo;
 	protected final double SELIC = 0.025;
 	protected double TARIFAS = 0.00;
 
-	public double getSaldo() {
-		return saldo;
-	}
-
-	public int getNumero() {
-		return numero;
-	}
-
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
-
-	public String getTitular() {
-		return titular;
-	}
-
-	public void setTitular(String titular) {
-		this.titular = titular;
-	}
-
-	public int getAgencia() {
-		return agencia;
-	}
-
-	public void setAgencia(int agencia) {
-		this.agencia = agencia;
-	}
+	
 
 	public abstract String consultaTipo();
 
@@ -111,5 +86,41 @@ public abstract class Conta {
 		System.out.printf("\nSaldo Atual: R$ %.2f", this.saldo);
 		System.out.print("\nRendimento mensal: " + this.SELIC + "%");
 		System.out.print("\nData de abertura: " + this.dataAbertura);
+	}
+	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public String getTitular() {
+		return titular;
+	}
+
+	public void setTitular(String titular) {
+		this.titular = titular;
+	}
+
+	public int getAgencia() {
+		return agencia;
+	}
+
+	public void setAgencia(int agencia) {
+		this.agencia = agencia;
 	}
 }
