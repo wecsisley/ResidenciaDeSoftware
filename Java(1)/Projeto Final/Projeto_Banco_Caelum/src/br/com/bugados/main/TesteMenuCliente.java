@@ -2,7 +2,8 @@ package br.com.bugados.main;
 
 import javax.swing.JOptionPane;
 
-import br.com.bugados.conta.*;
+import br.com.bugados.conta.ContaCorrente;
+import br.com.bugados.conta.ContaPoupanca;
 
 public class TesteMenuCliente {
 	public static void main(String[] args) {

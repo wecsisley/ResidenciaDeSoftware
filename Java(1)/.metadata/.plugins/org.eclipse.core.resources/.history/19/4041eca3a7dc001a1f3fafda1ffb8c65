@@ -1,8 +1,0 @@
-package br.com.bugados.main;
-
-public class TestaLeitorCsvFuncionarioEConta {
-
-	public static void main(String[] args) {
-
-	}
-}

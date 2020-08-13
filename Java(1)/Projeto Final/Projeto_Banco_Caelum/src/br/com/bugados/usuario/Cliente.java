@@ -1,61 +1,94 @@
 package br.com.bugados.usuario;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import br.com.bugados.funcionario.Funcionario;
+
 public class Cliente {
-	
-	protected String nome;
-	protected int cpf;
-	protected int senha;
-	
+
+	private String nome;
+	private int cpf;
+	private int senha;
+	private Funcionario funcionario;
+
 	public Cliente() {
 	}
-	
-	public Cliente (String nome, int senha, int cpf) {
+
+	public Cliente(String nome, int senha, int cpf) {
+
 		this.nome = nome;
 		this.senha = senha;
 		this.cpf = cpf;
 	}
-	
-	public boolean login(String password, int login) {
-		int saidaPassword = Integer.parseInt(password);
-		
-		if (this.senha == saidaPassword && this.cpf == login) {
-			System.out.println("Acesso permitido !");
-			return true;
-		} else if (this.cpf != login) {
-			System.out.println("Usuário não encontrado");
-			return false;
-		} else if (this.senha != saidaPassword) {
-			System.out.println("Senha inválida");
-			return false;
-		} else {
-			System.out.println("Usuário não cadastrado");
-			return false;
+
+	public static Map<Integer, Cliente> lerCliente(Map<Integer, Funcionario> mapFuncionario)
+			throws FileNotFoundException, IOException {
+		String linha;
+
+		try (BufferedReader csvReader = new BufferedReader(new FileReader("Cliente.txt"))) {
+			linha = csvReader.readLine();
+
+			Map<Integer, Cliente> mapCliente = new HashMap<>();
+
+			while ((linha = csvReader.readLine()) != null) {
+
+				linha = linha.replace("\"", "");
+
+				String[] data = linha.split(";");
+
+				String nome = data[0];
+				int cpf = Integer.parseInt(data[1]);
+				int senha = Integer.parseInt(data[2]);
+				int idFuncionario = Integer.parseInt(data[3]);
+
+				Cliente novoCliente = new Cliente(nome, senha, cpf);
+				novoCliente.setFuncionario(mapFuncionario.get(idFuncionario));
+				mapCliente.put(cpf, novoCliente);
+
+			}
+			return mapCliente;
 		}
 	}
-	
+
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public int getSenha() {
 		return senha;
 	}
+
 	public void setSenha(int senha) {
 		this.senha = senha;
 	}
+
 	public int getCpf() {
 		return cpf;
 	}
+
 	public void setCpf(int cpf) {
 		this.cpf = cpf;
 	}
 
 	@Override
 	public String toString() {
-		return "Cliente [nome=" + nome + ", senha=" + senha + ", cpf=" + cpf + "]";
+		return "Cliente [nome=" + nome + ", cpf=" + cpf + ", senha=" + senha + "]";
 	}
-	
-	
 }

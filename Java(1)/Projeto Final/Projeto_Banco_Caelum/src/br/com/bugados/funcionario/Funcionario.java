@@ -1,20 +1,48 @@
 package br.com.bugados.funcionario;
 
-import br.com.bugados.usuario.Cliente;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Funcionario extends Cliente {
-	
-	protected String cargo;
-	
-	public Funcionario () {
-		
+public class Funcionario {
+
+	private String cargo;
+
+	public Funcionario() {
 	}
-	
-	public Funcionario(String nome, String cargo, int cpf, int senha) {
-		this.nome = nome;
+
+	public Funcionario(String cargo) {
 		this.cargo = cargo;
-		this.cpf = cpf;
-		this.senha = senha;
+	}
+
+	public static Map<Integer, Funcionario> lerFuncionarios() throws FileNotFoundException, IOException {
+
+		Map<Integer, Funcionario> mapFuncionario = new HashMap<>();
+
+		String linha1;
+
+		try (BufferedReader csvReader1 = new BufferedReader(new FileReader("Funcionario.txt"))) {
+			linha1 = csvReader1.readLine();
+
+			while ((linha1 = csvReader1.readLine()) != null) {
+
+				linha1 = linha1.replace("\"", "");
+
+				String[] data = linha1.split(";");
+
+				String cargo = data[1];
+				int id = Integer.parseInt(data[0]);
+
+				Funcionario novoFuncionario = new Funcionario(cargo);
+
+				mapFuncionario.put(id, novoFuncionario);
+
+			}
+			return mapFuncionario;
+		}
 	}
 
 	public String getCargo() {
@@ -29,5 +57,5 @@ public class Funcionario extends Cliente {
 	public String toString() {
 		return "Funcionario [cargo=" + cargo + "]";
 	}
-	
+
 }

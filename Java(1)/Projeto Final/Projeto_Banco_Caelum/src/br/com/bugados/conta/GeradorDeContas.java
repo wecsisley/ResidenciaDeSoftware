@@ -5,11 +5,9 @@ import javax.swing.JOptionPane;
 public class GeradorDeContas extends Conta {
 
 	public GeradorDeContas(String titular, int numero, int agencia, String tipo, int cpfTitular) {
-		super(titular, numero, agencia, tipo, cpfTitular);
+		super();
 		// TODO Auto-generated constructor stub
 	}
-
-
 
 	public Conta criaConta() {
 
@@ -38,8 +36,6 @@ public class GeradorDeContas extends Conta {
 		}
 		return null;
 	}
-	
-	
 
 	@Override
 	public void consultaTipo() {

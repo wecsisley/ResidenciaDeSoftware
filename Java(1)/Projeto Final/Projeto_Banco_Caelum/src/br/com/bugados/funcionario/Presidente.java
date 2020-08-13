@@ -2,21 +2,4 @@ package br.com.bugados.funcionario;
 
 public class Presidente extends Funcionario {
 
-	@Override
-	public boolean login(String password, int login) {
-		int saidaPassword = Integer.parseInt(password);
-		if (this.senha == saidaPassword && this.cpf == login) {
-			System.out.println("Acesso permitido !");
-			return true;
-		} else if (this.cpf != login) {
-			System.out.println("Usuário não encontrado");
-			return false;
-		} else if (this.senha != saidaPassword) {
-			System.out.println("Senha inválida");
-			return false;
-		} else {
-			System.out.println("Usuário não cadastrado");
-			return false;
-		}
 	}
-}
