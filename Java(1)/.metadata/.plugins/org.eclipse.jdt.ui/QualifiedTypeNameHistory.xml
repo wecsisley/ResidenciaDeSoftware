@@ -3,8 +3,6 @@
     <fullyQualifiedTypeName name="br.com.bugados.funcionario.Funcionario"/>
     <fullyQualifiedTypeName name="br.com.bugados.funcionario.NomeQualquer"/>
     <fullyQualifiedTypeName name="br.com.bugados.util.Constantes"/>
-    <fullyQualifiedTypeName name="br.com.bugados.conta.MapaDasContas"/>
-    <fullyQualifiedTypeName name="br.com.bugados.util.InteracaoUsuario"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="br.com.bugados.util.MenuDeOpcoes"/>
     <fullyQualifiedTypeName name="com.sun.tools.javac.util.List"/>
@@ -14,4 +12,6 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.Comparator"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="br.com.bugados.util.InteracaoUsuario"/>
+    <fullyQualifiedTypeName name="br.com.bugados.conta.MapaDasContas"/>
 </qualifiedTypeNameHistroy>
