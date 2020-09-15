@@ -47,22 +47,27 @@ insert into Fornecedor (id, nome) values
 (14,'Grupo Petropolis'),
 (15,'Imperial');
 
-insert into produto (id, nome, categoria_id, codigoDeBarras, data_fabricacao) values
-(1,'Hamburguer Bovino','1',123,parsedatetime('2020-08-10', 'yyyy-mm-dd'),
-(2,'Suco Sufresh Uva','8',321,parsedatetime('2020-07-05', 'yyyy-mm-dd'),
-(3,'Arroz branco elegante tipo1','3',554,parsedatetime('2020-05-02', 'yyyy-mm-dd'),
-(4,'Feijao Bom No Prato','3',776,parsedatetime('2020-03-29', 'yyyy-mm-dd'),
-(5,'Fuba Dna Benta','3',554,parsedatetime('2020-05-02', 'yyyy-mm-dd'),
-(6,'Cloro 5L','7',119,parsedatetime('2020-08-20', 'yyyy-mm-dd'),
-(7,'Iogurte Morango 500ml','5',876,parsedatetime('2020-08-15', 'yyyy-mm-dd'),
-(8,'Leite Integral Macuco 1L','5',111,parsedatetime('2020-08-19', 'yyyy-mm-dd'),
-(9,'Leite Integral Piracanjuba 1L','5',332,parsedatetime('2020-08-22', 'yyyy-mm-dd'),
-(10,'Neston 400g','3',765,parsedatetime('2020-07-05', 'yyyy-mm-dd'),
-(11,'Biscoito reacheado piraque limao','6',983,parsedatetime('2020-07-30', 'yyyy-mm-dd'),
-(12,'Cerveja Brahma 600ml','4',998,parsedatetime('2020-04-017', 'yyyy-mm-dd'),
-(13,'Cerveja Itaipava 600ml','4',965,parsedatetime('2020-04-017', 'yyyy-mm-dd'),
-(14,'Cerveja Imperio 600ml','4',912,parsedatetime('2020-04-017', 'yyyy-mm-dd');
+insert into produto (id, nome, categoria_id, codigo_de_barras, data_fabricacao) values
+(1,'Hamburguer Bovino',1,123,parsedatetime('2020-08-10', 'yyyy-mm-dd')),
+(2, 'Suco Sufresh Uva',8,321,parsedatetime('2020-07-25', 'yyyy-mm-dd')),
+(3, 'Arroz branco elegante tipo1', 3, 554, parsedatetime('2020-05-02', 'yyyy-mm-dd')),
+(4, 'Feijao Bom No Prato', 3, 776, parsedatetime('2020-03-29', 'yyyy-mm-dd')),
+(5, 'Fuba Dna. Benta', 3, 555, parsedatetime('2020-05-02', 'yyyy-mm-dd')),
+(6, 'Cloro 5L', 7, 119, parsedatetime('2020-08-20', 'yyyy-mm-dd'));
 
 
 insert into produto_fornecedor(produto_id, fornecedor_id) values
-(1,1), (1,2), (2,3), (3,4), (3,5), (3,6), (4,4), (4,5), (4,6), (5,4), (5,5), (5,6), (6,7), (7,8), (8,9), (9,10), (10,11), (11,12), (12,13),(13,14),(14,15);
+(1,1), (1,2), (2,3), (3,4), (3,5), (3,6), (4,4), (4,5), (4,6), (5,4), (5,5), (5,6), (6,7);
+
+insert into pedido_compra (id, data_pedido_compra, cliente_id) values
+(1,parsedatetime('2020-08-10', 'yyyy-mm-dd'), 1),
+(2,parsedatetime('2020-06-11', 'yyyy-mm-dd'), 2),
+(3,parsedatetime('2020-07-21', 'yyyy-mm-dd'), 2);
+
+
+insert into produto_vendido (id, produto_vendido_id, produto_id, quantidade) values
+(1,1,4,5),
+(3,2,2,1),
+(4,2,6,1),
+(5,3,3,1),
+(6,3,1,1);
