@@ -1,14 +1,13 @@
 import './App.css'
 import React from 'react'
-
 import Card from './components/layout/Card'
-
+import Index from './components/pages/home/Index'
 
 export default () => (
     <div className="App">
         <div className="teste">
             <Card>
-                <h1>Menu de navegação</h1>
+             <h1>Menu de navegação</h1>
             </Card>
             <Card className="cardBarraPesquisa">
                 <h2>Barra de pesquisa</h2>
@@ -21,14 +20,7 @@ export default () => (
                     <button>Incluir</button>
                 </div>
             </Card>
-            <Card titulo="Eletrodomésticos" color="#982395">
-                <img src={require('./assets/image/eletrodomesticos.jpg')}></img>
-                <div className='botoesCards'>
-                    <button>Info</button> &nbsp;&nbsp;&nbsp;
-                    <button>Atualizar</button> &nbsp;&nbsp;&nbsp;
-                    <button>Excluir</button>
-                </div>
-            </Card>
+            <Index></Index>
             <Card titulo="Imóveis" color="#982395">
                 <img src={require('./assets/image/imoveis.jpg')}></img>
                 <div className='botoesCards'>
