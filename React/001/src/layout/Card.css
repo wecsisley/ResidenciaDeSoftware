@@ -1,0 +1,8 @@
+.Card {
+    display: flex;
+    flex-direction: column;
+    background-color: blueviolet;
+    justify-content: flex-end;
+   
+
+}
