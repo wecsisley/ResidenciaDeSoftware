@@ -1,11 +1,10 @@
 import React from 'react';
-import reactdom from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Home from './Pages/Home'
-import Delete from './Pages/Delete/index'
-import Create from './Pages/Create/index'
-import Update from './Pages/PageUpdate'
-import Card from './layout/Card'
+import Home from './pages/home/index'
+import Delete from './pages/delete/index'
+import Create from './pages/create/index'
+import Update from './pages/PageUpdate/index'
+
 
 const App = () => {
   return (
